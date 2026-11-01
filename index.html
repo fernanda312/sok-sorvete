@@ -5989,6 +5989,8 @@ document.addEventListener('DOMContentLoaded', function() {
       var els=[root].concat(Array.prototype.slice.call(root.querySelectorAll('*')));
       els.forEach(function(el){
         try{
+          var tn=el.tagName;
+          if(tn==='STYLE'||tn==='SCRIPT'||tn==='TEMPLATE'||tn==='LINK'||tn==='META'||tn==='NOSCRIPT'){return;}
           el.style.opacity='1';
           el.style.visibility='visible';
           el.style.transform='none';
